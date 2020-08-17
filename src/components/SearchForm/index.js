@@ -1,19 +1,16 @@
 import React, {useState} from 'react'
 
-export default function SearchForm (){
+export default function SearchForm ({onSearchValue}){
     
     const [inputImages, setInputImages] = useState('')
 
     const handleChange = (e) => {
-        console.log(e.target.value)
         setInputImages(e.target.value)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('submit')
-        
-        alert(inputImages)
+        onSearchValue(inputImages)
     } 
     return (
         <form onSubmit={handleSubmit}>
