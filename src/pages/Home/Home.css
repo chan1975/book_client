@@ -1,4 +1,27 @@
+
 .SearchFrom-wrapper{
     display: flex;
     justify-content: center;
+}
+
+#galeria {
+    margin: 1rem auto;
+    width:100%;
+    max-width:100%;
+    column-count: 5;
+}
+
+@media (max-width: 769px) { 
+    #galeria {
+        column-count:3;
+    }
+
+}
+        
+/* Móviles en vertical */
+
+@media (max-width: 480px) {
+    #galeria {
+        column-count: 2;
+    }
 }
