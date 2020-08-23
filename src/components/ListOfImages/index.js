@@ -1,15 +1,20 @@
 import React from 'react'
 import Image from '../Image'
-export default function({images = []}){
-    console.log(images)
+import './style.css'
+export default function ListOfImages({images = []}){
+    
     return(
-        images.map(image => 
-            <Image 
-                key={image.id}
-                id = {image.id} 
-                user={image.user} 
-                url={image.url} 
-            />
-        )
+      <div className= "ListOfImages">
+        {
+            images.map(image => 
+               <Image 
+                  key={image.id}
+                  id = {image.id} 
+                  user={image.user} 
+                  url={image.url} 
+               />
+            )
+        }
+      </div> 
     )
 }

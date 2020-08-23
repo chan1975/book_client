@@ -8,14 +8,16 @@ import 'bulma/css/bulma.css'
 function App() {
   return (
     <div className="App">
-      <Route
-         component={Home}
-         path='/'
-      />
-      <Route
-         component={DetailImage}
-         path='/detail/:id'
-      />
+      <section className="App-content">
+        <Route
+          component={Home}
+          path='/'
+        />
+        <Route
+          component={DetailImage}
+          path='/detail/:id'
+        />
+      </section>
     </div>
   );
 }
