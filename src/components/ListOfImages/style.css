@@ -1,0 +1,7 @@
+.ListOfImages {
+   display: grid;
+   grid-gap: 0 1%;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-template-rows: masonry;
+   min-height: 100vh;
+ }

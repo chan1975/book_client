@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import SearchForm from '../../components/SearchForm'
 import getImages from '../../service/Images'
-import './Home.css'
+import './style.css'
 import ListOfImages from '../../components/ListOfImages'
 export default function (){
     const [images = [], setImages] = useState([])
@@ -20,14 +20,14 @@ export default function (){
 
     return(
         <>
-            <div className = 'SearchFrom-wrapper'>
-                <SearchForm onSearchValue={handleSearchValue}/>
+          <div className = 'SearchFrom-wrapper'>
+              <SearchForm onSearchValue={handleSearchValue}/>
+          </div>
+          <div className="App-main">
+            <div className="App-results">
+              <ListOfImages images={images} />
             </div>
-            <section id='galeria'>
-                <div>
-                    <ListOfImages images = {images}/>
-                </div>
-            </section>
+          </div>
         </>
     )
 }
