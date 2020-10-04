@@ -9,8 +9,10 @@
     "bulma": "^0.9.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-data-table-component": "^6.11.5",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "styled-components": "^5.2.0",
     "wouter": "^2.5.1"
   },
   "scripts": {
