@@ -19,12 +19,9 @@ const fromApiResponseToBooks = apiResponse => {
   }
   return []
 }
-const fromApiResponseToBook = apiResponse => {
-  console.log(apiResponse)
-}
 
 export function getBooks ({limit = 4, sortBy = 'id', page = 0, direction = 'asc'} = {}) {
-  const apiURL = `${API_URL}/books?pageNo=${page -1 }&pageSize=${limit}&sortBy=${sortBy}&direction=${direction}`
+  const apiURL = `${API_URL}/books?pageNo=${page === 0 ? 0 : page - 1 }&pageSize=${limit}&sortBy=${sortBy}&direction=${direction}`
   return fetch(apiURL)
     .then(res => res.json())
     .then(fromApiResponseToBooks)
@@ -36,9 +33,18 @@ export function deleteBooks ({id}) {
     .then(res => res.json())
 }
 
-export async function createBook ({book}) {
+export async function createOrUpdateBook ({book}) {
   const apiURL = `${API_URL}/books`
   return axios.post(apiURL,book)
+    .then(res => res.data)
+    .catch(ex =>{
+      console.log(ex)
+    })
+}
+
+export async function deleteBook ({id}) {
+  const apiURL = `${API_URL}/books/${id}`
+  return axios.delete(apiURL)
     .then(res => res.data)
     .catch(ex =>{
       console.log(ex)
